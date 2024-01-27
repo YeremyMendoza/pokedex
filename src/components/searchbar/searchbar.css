@@ -1,0 +1,32 @@
+.searchabar{
+    width: 100%;
+    height: 200px;
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.searchabar .titulo{
+    font-family: 'Press Start 2P', system-ui;   
+    color: rgb(254, 202, 27);
+    -webkit-text-stroke: 2px rgb(55, 97, 168);
+}
+.searchabar .search{
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 9px;
+}
+.searchabar .search .tipo{
+    padding: 0px 7px;
+    margin-left: -5px;
+}
+.searchabar .search input{
+    flex-grow: 1;
+}
+.br-n{
+    border-radius: 9px 0px 0px 9px !important;
+}

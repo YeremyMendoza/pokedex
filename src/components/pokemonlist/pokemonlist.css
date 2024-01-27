@@ -1,0 +1,24 @@
+.pokemonList{
+    width: calc(70% - 40px);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: content-box;
+    gap: 20px;
+}
+.pokemonList .controles{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.pokemonList .controles button{
+    padding: 0px 10px;
+    background: var(--red);
+    color: white;
+    border: none;
+}

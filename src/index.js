@@ -1,17 +1,54 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { StrictMode, useState } from "react";
+import { createRoot } from "react-dom/client";
+import Header from "./components/header/header";
+import SearchBar from "./components/searchbar/searchbar";
+import SearchOptions from "./components/searchoptions/searchoptions";
+import PokemonList from "./components/pokemonlist/pokemonlist";
+import "./index.css";
+import { useFetchData } from "./utils/hooks/peticiones";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+function App(){
+    const [limit, setLimit] = useState(20);
+    const [load, results, setUrl, setLoad] = useFetchData("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20");
+    const [, resultsT, setUrlT,] = useFetchData("");
+
+    function filteredList(type){
+        setUrlT(type.url);
+    }
+    function viewNext(){
+        setUrl(`https://pokeapi.co/api/v2/pokemon?offset=${limit}&limit=20`);
+        setLimit(limit + 20);
+        setLoad(true);
+    }
+    function viewPrev(){
+        if(results.previous !== null){
+            setLimit(limit => limit - 20);
+            setUrl(results.previous);   
+            setLoad(true);
+        }
+    }
+    return (
+        <>
+        <Header />
+        <SearchBar/>
+        <div className="main">
+            <SearchOptions filteredList = {filteredList}/>
+            <PokemonList 
+            load={load}
+            limit={limit} 
+            next={viewNext} 
+            prev={viewPrev} 
+            results={ results && results.results}
+            resultsT = {resultsT && resultsT.pokemon}
+            />
+        </div>
+        </>
+    );
+}
+
+let root = createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <StrictMode>
+        <App />
+    </StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

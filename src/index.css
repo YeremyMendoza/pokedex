@@ -1,13 +1,184 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&display=swap');
+/* font-family: 'Bebas Neue', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+:root{
+    --red: rgb(218, 15, 45);
+    --dark: rgb(49, 49, 49);
+    --bones: rgb(127, 127, 127);
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    width: 100vw;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden auto;
+    font-family: 'Roboto', sans-serif;
+}
+#root{
+    width: 100%;
+}
+.main{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+}
+.form-control input{
+    border: none;
+    padding: 10px; 
+    border-radius: 9px;
+}
+.btn{
+    border: none;
+    border-radius: 9px;
+}
+.load{
+    transform: rotate(0deg);
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.bones{
+    animation-name: bones;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+@keyframes bones {
+    0%{
+        background: var(--bones);
+    }
+    100%{
+        background: var(--dark);
+    }
+}
+.w-10{
+    width: 10%;
+}
+.w-20{
+    width: 20%;
+}
+.w-30{
+    width: 30%;
+}
+.w-40{
+    width: 40%;
+}
+.w-50{
+    width: 50%;
+}
+.w-60{
+    width: 60%;
+}
+.w-70{
+    width: 70%;
+}
+.w-80{
+    width: 80%;
+}
+.w-90{
+    width: 90%;
+}
+.w-100{
+    width: 100%;
+}
+.f-lg{
+    font-size: 5rem;
+}
+.h1{
+    font-size: 3rem;
+}
+.h2{
+    font-size: 2.5rem;
+}
+.h3{
+    font-size: 2rem;
+}
+.h4{
+    font-size: 1.5rem;
+}
+.h5{
+    font-size: 1rem;
+}
+.h6{
+    font-size: 0.5rem;
+}
+.normal{
+    background: rgb(164, 172, 175);
+}
+.fighting{
+    background: rgb(213, 103, 35)
+}
+.flying{
+    background: rgb(189, 185, 184);
+}
+.poison{
+    background: rgb(185, 127, 201);
+}
+.ground{
+    background: rgb(171, 152, 66);
+}
+.rock{
+    background: rgb(163, 140, 33);
+}
+.bug{
+    background:rgb(114, 159, 63);
+}
+.ghost{
+    background: rgb(123, 98, 163);
+}
+.steel{
+    background: rgb(158, 183, 184);
+}
+.fire{
+    background: rgb(253, 125, 36);
+}
+.water{
+    background: rgb(69, 146, 196);
+}
+.grass{
+    background: rgb(155, 204, 80);
+}
+.electric{
+    background: rgb(238, 213, 53);
+}
+.psychic{
+    background: rgb(243, 102, 185);
+}
+.ice{
+    background: rgb(81, 196, 231);
+}
+.dragon{
+    background:rgb(241, 110, 87);
+}
+.dark{
+    background: rgb(112, 112, 112);
+}
+.fairy{
+    background: rgb(253, 185, 233);
+}
+.c-red{
+    color: var(--red);
 }
